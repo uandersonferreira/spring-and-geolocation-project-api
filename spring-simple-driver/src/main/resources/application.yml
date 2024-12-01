@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: spring-simple-driver
+
+env:
+  minimum-to-pay: 4.8
+  app-taxa-driver: 12.5
+  amount-paid-per-km: 1.2
