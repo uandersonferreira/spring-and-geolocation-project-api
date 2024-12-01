@@ -22,8 +22,4 @@ public class SimpleControllerImpl implements SimpleController {
         return simpleService.request(request);
     }
 
-
-
-
-
 }//class

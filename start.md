@@ -1,9 +1,24 @@
+
+Abaixo está o passo a passo que eu fiz para criar o projeto:
+
 BASE DE DADOS: https://download.geofabrik.de/
 ou 
 wget http://download.geofabrik.de/europe/germany/norte-latest.osm.pbf
 
+OBS: o nome 'norte-latest.osm.pbf' é o nome do arquivo que eu baixei da base de dados do geofabrik.de ele muda de acordo com a região que você escolher.
+
 API VIA DOCKER NO GITHUB: https://github.com/Project-OSRM/osrm-backend
 
+criar um projeto spring boot pelo site: https://start.spring.io/
+    - com java 21
+    - maven
+    - spring boot 3.4.0
+    - spring web, openfeign e lombok
+
+
+No terminal linux:
+
+(Eu já tenho docker instalado)
 
 1°:
 
