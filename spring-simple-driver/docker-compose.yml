@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  osrm-prepare:
+    image: ghcr.io/project-osrm/osrm-backend
+    container_name: osrm-prepare
+    volumes:
+      - ./docker:/data
+    entrypoint: >
+      sh -c "
+        osrm-extract -p /opt/car.lua /data/norte-latest.osm.pbf &&
+        osrm-partition /data/norte-latest.osrm &&
+        osrm-customize /data/norte-latest.osrm
+      "
+    depends_on:
+      - osrm-routed
+
+  osrm-routed:
+    image: ghcr.io/project-osrm/osrm-backend
+    container_name: osrm-routed
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./docker:/data
+    command: osrm-routed --algorithm mld /data/norte-latest.osrm
